@@ -4,12 +4,12 @@ saya
 
 # Entitas dan Atribut
 ## Admin
--id_admin
--nama_admin
--username_admin
--pass_admin
--alamat_admin
--no_telp_admin
+1.id_admin
+2.nama_admin
+3.username_admin
+4.pass_admin
+5.alamat_admin
+6.no_telp_admin
 
 ## komik
 -id_komik
