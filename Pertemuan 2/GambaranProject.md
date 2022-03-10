@@ -1,4 +1,3 @@
-saya
 ## Deskripsi-Project
 Saya akan membuat peminjaman komik untuk memudahkan para pecinta komik untuk membacanya dan membiasakan agar tidak membaca secara ilegal. 
 
