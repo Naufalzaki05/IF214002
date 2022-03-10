@@ -27,13 +27,13 @@ saya
 
 ## peminjaman
 • id_peminjaman
-• nama_peminjam
+• nama_member
 • tanggal_peminjaman
 • tanggal_pengembalian
 
 ## pengembalian
 • id_pengembalian
-• nama_peminjam
+• nama_member
 • status_pengembalian
 • denda
 
