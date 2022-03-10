@@ -4,36 +4,36 @@ saya
 
 # Entitas dan Atribut
 ## Admin
-• id_admin
-• nama_admin
-• username_admin
-• pass_admin
-• alamat_admin
-• no_telp_admin
+-id_admin
+-nama_admin
+-username_admin
+-pass_admin
+-alamat_admin
+-no_telp_admin
 
 ## komik
-• id_komik
-• judul_komik
-• genre_komik
-• pengarang_komik
-• penerbit_komik
-• tahun_rilis
+-id_komik
+-judul_komik
+-genre_komik
+-pengarang_komik
+-penerbit_komik
+-tahun_rilis
 
 ## member
-• id_member
-• nama_member
-• alamat_member
-• no_telp_member
+-id_member
+-nama_member
+-alamat_member
+-no_telp_member
 
 ## peminjaman
-• id_peminjaman
-• nama_member
-• tanggal_peminjaman
-• tanggal_pengembalian
+-id_peminjaman
+-nama_member
+-tanggal_peminjaman
+-tanggal_pengembalian
 
 ## pengembalian
-• id_pengembalian
-• nama_member
-• status_pengembalian
-• denda
+-id_pengembalian
+-nama_member
+-status_pengembalian
+-denda
 
