@@ -1,39 +1,38 @@
 saya
 ## Deskripsi-Project
--Saya akan membuat peminjaman komik untuk memudahkan para pecinta komik untuk membacanya dan membiasakan agar tidak membaca secara ilegal. 
+Saya akan membuat peminjaman komik untuk memudahkan para pecinta komik untuk membacanya dan membiasakan agar tidak membaca secara ilegal. 
 
 # Entitas dan Atribut
 ## Admin
-1.id_admin
-2.nama_admin
-3.username_admin
-4.pass_admin
-5.alamat_admin
-6.no_telp_admin
+1. id_admin
+2. nama_admin
+3. username_admin
+4. pass_admin
+5. alamat_admin
+6. no_telp_admin
 
 ## komik
--id_komik
--judul_komik
--genre_komik
--pengarang_komik
--penerbit_komik
--tahun_rilis
+1. id_komik
+2. judul_komik
+3. genre_komik
+4. pengarang_komik
+5. penerbit_komik
+6. tahun_rilis
 
 ## member
--id_member
--nama_member
--alamat_member
--no_telp_member
+1. id_member
+2. nama_member
+3. alamat_member
+4. no_telp_member
 
 ## peminjaman
--id_peminjaman
--nama_member
--tanggal_peminjaman
--tanggal_pengembalian
+1. id_peminjaman
+2. nama_member
+3. tanggal_peminjaman
+4. tanggal_pengembalian
 
 ## pengembalian
--id_pengembalian
--nama_member
--status_pengembalian
--denda
-
+1. id_pengembalian
+2. nama_member
+3. status_pengembalian
+4. denda
