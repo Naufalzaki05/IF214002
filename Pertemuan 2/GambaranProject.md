@@ -26,12 +26,12 @@ Saya akan membuat peminjaman komik untuk memudahkan para pecinta komik untuk mem
 
 ## peminjaman
 1. id_peminjaman
-2. nama_member
+2. id_member
 3. tanggal_peminjaman
 4. tanggal_pengembalian
 
 ## pengembalian
 1. id_pengembalian
-2. nama_member
+2. id_member
 3. status_pengembalian
 4. denda
