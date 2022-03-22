@@ -15,6 +15,7 @@
 - [Rayhan Tsaury](https://github.com/rayhanyeager/IF214002)
 - [Ricky Muhammad Ridwan](https://github.com/ricky03knowhere/IF214002)
 - [Rifky Maulana](https://github.com/rifkymaulana6/IF214002)
+- [Rifqi lutfan Padl](https://github.com/RIFQILUTFANPADL92/IF214002)
 - [Rijki](https://github.com/rizky-iki/IF214002)
 - [Rizal Hadiyansah](https://github.com/azliR/IF214002)
 - [Rizki Aryandi](https://github.com/rizkiaryandi/IF214002)
