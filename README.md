@@ -2,6 +2,7 @@
 ## Dosen Pengampu:
 - [M. Insan Al Amin](https://github.com/insanalamin/IF214002) 
 ## Repositori Peserta Kelas E
+- [Naufal Zaki](https://github.com/Naufalzaki05/IF214002)
 - [Nenti Nurnaningsih](https://github.com/nentinur/IF214002)
 - [Normalika Shandi](https://github.com/NormalikaShandi/IF214002-NEW)
 - [Nugraha Adi Sulistyo](https://github.com/nugrahaas/IF214002)
@@ -17,6 +18,7 @@
 - [Rifky Maulana](https://github.com/rifkymaulana6/IF214002)
 - [Rifqi lutfan Padl](https://github.com/RIFQILUTFANPADL92/IF214002)
 - [Rijki](https://github.com/rizky-iki/IF214002)
+- [Rio Jepriansah](https://github.com/riojapri/IF214002)
 - [Rizal Hadiyansah](https://github.com/azliR/IF214002)
 - [Rizki Aryandi](https://github.com/rizkiaryandi/IF214002)
 - [Salman Fauzan Fahri Aulia](https://github.com/salmanfazz/IF214002)
