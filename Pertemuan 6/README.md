@@ -42,16 +42,16 @@
 |3|rora|manisi|089700998739|
 
 #### Tabel Peminjaman
-|🔑IDPeminjaman|IDadmin|IDkomik|IDMember|tanggal_peminjaman|tanggal_pengembalian|
+|🔑IDPeminjaman|IDadmin|IDkomik|IDMember|waktu_peminjaman|jatuh_tempo|
 |---|---|---|---|---|---|
-|1|1|1|1|02/04/2022|02/05/2022|
-|2|1|2|2|02/05/2022|02/06/2022|
-|3|1|3|3|02/05/2022|07/05/2022|
+|1|1|1|1|2022-04-01 13:40:42|2022-05-01 13:40:42|
+|2|1|2|2|2022-04-01 14:00:00|2022-05-01 14:00:00|
+|3|1|3|3|2022-04-02 08:00:00|2022-05-02 08:00:00|
 
 #### Tabel Pengembalian
-|🔑IDPengembalian|IDPeminjaman|status_pengembalian|kondisi_komik|tanggal_pengembalian|Denda|
+|🔑IDPengembalian|IDPeminjaman|waktu_pengembalian|status_pengembalian|kondisi_komik|Denda|
 |---|---|---|---|---|---|
-|1|1|Sudah|baik|02/05/2022|0|
-|2|2|Belum|-|-|-|
-|3|3|Belum|-|-|-|
+|1|1|2022-05-01 13:40:42|Sudah|baik|0|
+|2|2|-|Belum|-|-|
+|3|3|-|Belum|-|-|
 ---
