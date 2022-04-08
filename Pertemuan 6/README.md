@@ -39,7 +39,7 @@
 |---|---|---|---|
 |1|rira|cileunyi|084511223467|
 |2|rara|cipadung|087722445362|
-|3|rora|manisi||089700998739|
+|3|rora|manisi|089700998739|
 
 #### Tabel Peminjaman
 |🔑IDPeminjaman|IDadmin|IDkomik|IDMember|tanggal_peminjaman|tanggal_pengembalian|
@@ -51,7 +51,7 @@
 #### Tabel Pengembalian
 |🔑IDPengembalian|IDPeminjaman|status_pengembalian|kondisi_komik|tanggal_pengembalian|Denda|
 |---|---|---|---|---|---|
-|1|1|1|Sudah|baik|02/05/2022|0|
-|2|2|2|Belum|-|-|-|
-|3|3|3|Belum|-|-|-|
+|1|1|Sudah|baik|02/05/2022|0|
+|2|2|Belum|-|-|-|
+|3|3|Belum|-|-|-|
 ---
