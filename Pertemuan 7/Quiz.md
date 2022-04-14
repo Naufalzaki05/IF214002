@@ -3,5 +3,5 @@
 - untuk membantu mengelompokann data
 
 ## Tabel karyawan
-|PKID|Nama|Gaji Bulanan|Tanggal Mulai Gaji|Tanggal masuk|Alamat Sekarang|Jabatan Sekarang|
+|🔑IDadmin|nama_karyawan|gaji_bulanan|tanggal_mulai_gaji|tanggal_masuk|alamat_sekarang|jabatan_sekarang|
 |---|---|---|---|---|---|---|---|
