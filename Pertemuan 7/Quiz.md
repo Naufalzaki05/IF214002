@@ -4,4 +4,4 @@
 
 ## Tabel karyawan
 |PKID|Nama|Gaji Bulanan|Tanggal Mulai Gaji|Tanggal masuk|Alamat Sekarang|Jabatan Sekarang|
-|...|...|...|...|...|...|...|...|...|
+|---|---|---|---|---|---|---|---|
