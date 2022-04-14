@@ -3,5 +3,5 @@
 - untuk membantu mengelompokann data
 
 ## Tabel karyawan
-||karyawan|
+|.|karyawan|
 |...|...|
