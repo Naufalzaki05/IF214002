@@ -4,7 +4,7 @@
 - untuk membantu mengelompokann data
 
 #### Tabel karyawan
-|PKIDkaryawab|nama_karyawan|gaji_bulanan|tanggal_mulai_gaji|tanggal_masuk|alamat_sekarang|jabatan_sekarang|
+|PKIDkaryawan|nama_karyawan|gaji_bulanan|tanggal_mulai_gaji|tanggal_masuk|alamat_sekarang|jabatan_sekarang|
 |---|---|---|---|---|---|---|
 
 
