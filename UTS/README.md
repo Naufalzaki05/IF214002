@@ -32,7 +32,10 @@ Membuat sistem ruang baca komik, sehingga pengelola ruang baca mudah dalam mengu
 4. pass_admin
 5. alamat_admin
 6. no_telp_admin
-
+## Gudang
+1. id_rak(PK)
+2. id_admin(FK)
+3. id_komik(FK)
 ## komik
 1. id_komik(PK)
 2. judul_komik
