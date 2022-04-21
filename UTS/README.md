@@ -103,7 +103,7 @@ Membuat sistem ruang baca komik, sehingga pengelola ruang baca mudah dalam mengu
 |3|Nero|neroc09|neronero0|roma|088827271313|
 
 #### Tabel Gudang
-|🔑id_rak|id_admin|id_buku|
+|🔑id_rak|id_admin|id_komik|
 |---|---|---|
 |1|1|1|
 |1|2|2|
