@@ -1,4 +1,82 @@
+## UTS BASDAT
+1. Nama: Naufal Zaki
+2. NIM: 1207050089
+3. Kelas: IF'E
+
+## No 1
+
+## No 2
 ## No 3
+## Deskripsi-Project
+Membuat sistem ruang baca komik, sehingga pengelola ruang baca mudah dalam mengurus administrasi.
+## Fitur-fitur
+1. Admin dapat mengelola komik.
+2. Admin dapat mengelola peminjaman serta pengembalian komik member.
+
+# Entitas dan Atribut
+## Admin
+1. id_admin(PK)
+2. nama_admin
+3. username_admin
+4. pass_admin
+5. alamat_admin
+6. no_telp_admin
+
+## komik
+1. id_komik(PK)
+2. judul_komik
+3. tahun_rilis
+4. id_genre(FK)
+5. id_pengarang(FK)
+6. id_penerbit(FK)
+7. jumlah
+
+## Genre
+1. id_genre(PK)
+2. nama_genre
+
+## Pengarang
+1. id_pengarang(PK)
+2. nama_pengarang
+
+## Penerbit
+1. id_penerbit(PK)
+2. nama_penerbit
+
+## member
+1. id_member(PK)
+2. nama_member
+3. alamat_member
+4. no_telp_member
+
+## peminjaman
+1. id_peminjaman(PK)
+2. id_member(FK)
+3. waktu_peminjaman
+4. jatuh_tempo
+
+## pengembalian
+1. id_pengembalian
+2. id_peminjaman
+3. waktu_prngembalian
+4. status_pengembalian
+5. kondisi
+6. denda
+
+## RELASI
+Admin 1 1 --- 0-n Peminjaman
+Admin 1 1 --- 1 1 Gudang
+Komik 1-n --- 1 1
+Admin 1 1 --- 0-n Pengembalian
+Peminjaman 0-n --- 1 1 Member
+Peminjaman 0-n --- 0-n Komik
+Pengembalian 0-n --- 1 1 Member
+Genre 1-n --- 1-n Komik
+Pengarang 1 1 --- 1-n Komik
+penerbit 1 1 --- 1-n Komik
+
+## Erd Crow foot
+![Erd crow foot](img/erd crow foot.drawio.png "Erd Crow Foot")
 #### Tabel Admin
 |🔑id_admin|nama_admin|username_admin|pass_admin|alamat_admin|no_telepon|
 |---|---|---|---|---|---|
@@ -10,13 +88,15 @@
 |🔑id_rak|id_admin|id_buku|
 |---|---|---|
 |1|1|1|
+|1|2|2|
+|1|3|3|
 
 #### Tabel Komik
-|🔑id_komik|id_genre|id_pengarang|id_penerbit|judul_komik|tahun_rilis|
-|---|---|---|---|---|---|
-|1|1|1|1|nisekoi|2011|
-|2|1|2|2|Kanojo  Okarishimasu|2017|
-|3|1|3|3|Yahari Ore no Seishun Love Comedy wa Machigatteiru|2011|
+|🔑id_komik|id_genre|id_pengarang|id_penerbit|judul_komik|tahun_rilis|jumlah|
+|---|---|---|---|---|---|---|
+|1|1|1|1|nisekoi|2011|10|
+|2|1|2|2|Kanojo  Okarishimasu|2017||15|
+|3|1|3|3|Yahari Ore no Seishun Love Comedy wa Machigatteiru|2011|11|
 
 #### Tabel genre
 |🔑id_genre|nama_genre|
