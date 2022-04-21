@@ -1,11 +1,22 @@
 ## UTS BASDAT
-1. Nama: Naufal Zaki
-2. NIM: 1207050089
-3. Kelas: IF'E
+Naufal Zaki - 1207050089 - E
 
 ## No 1
+Basis data relasional dapat langsung dibangun menggunakan perintah SQL di sistem basis data seperti MySQL, dsb tanpa ada perancangan terlebih dahulu. 
+Jelaskan apa keuntungan melakukan perancangan basis data terlebih dahulu (menggunakan ERD ataupun Class Diagram) !
+- keutungan nya data lebih sistematis dan tidak redundan
+- bisa mengetahui alur bisnisnya
 
 ## No 2
+cara mentransformasikan proses bisnis sebuah organisasi menjadi struktur data di basis data:
+- Tentukan Deskripsi dari proses bisnis yang akan dibuat
+- tentukan fitur-fitur yang akan ada di proses bisnis tersebut
+- tentukan entitas serta atributnya
+- tentukan relasi pada setiap entitas
+- tentukan key pada setiap entitas.
+- tentukan tipe datanya
+- buat ERD notasi Chen dan notasi Crow Foot
+
 ## No 3
 ## Deskripsi-Project
 Membuat sistem ruang baca komik, sehingga pengelola ruang baca mudah dalam mengurus administrasi.
@@ -75,8 +86,12 @@ Genre 1-n --- 1-n Komik
 Pengarang 1 1 --- 1-n Komik
 penerbit 1 1 --- 1-n Komik
 
+## Erd Chen
+![Diagram ERD drawio](https://user-images.githubusercontent.com/100655325/164358897-8c1a7027-793c-4bac-bbb9-29047f16b178.png)
+
 ## Erd Crow foot
-![Erd crow foot](img/erd crow foot.drawio.png)
+(![erd crow foot drawio](https://user-images.githubusercontent.com/100655325/164357167-002a021d-9e36-4b30-b084-39448db82424.png)
+)
 #### Tabel Admin
 |🔑id_admin|nama_admin|username_admin|pass_admin|alamat_admin|no_telepon|
 |---|---|---|---|---|---|
@@ -95,7 +110,7 @@ penerbit 1 1 --- 1-n Komik
 |🔑id_komik|id_genre|id_pengarang|id_penerbit|judul_komik|tahun_rilis|jumlah|
 |---|---|---|---|---|---|---|
 |1|1|1|1|nisekoi|2011|10|
-|2|1|2|2|Kanojo  Okarishimasu|2017||15|
+|2|1|2|2|Kanojo  Okarishimasu|2017|15|
 |3|1|3|3|Yahari Ore no Seishun Love Comedy wa Machigatteiru|2011|11|
 
 #### Tabel genre
