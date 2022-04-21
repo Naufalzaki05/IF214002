@@ -3,6 +3,11 @@
 - untuk membantu menganalisis/mencari data
 - untuk membantu mengelompokann data
 
+## Relasi
+karyawan 1 1 --- 1-n historisgaji
+karyawan 1 1 --- 1-n historisalamat
+karyawan 1 1 --- 1-n historisjabatan
+
 #### Tabel karyawan
 |PKIDkaryawan|nama_karyawan|gaji_bulanan|tanggal_mulai_gaji|tanggal_masuk|alamat_sekarang|jabatan_sekarang|
 |---|---|---|---|---|---|---|
@@ -27,7 +32,7 @@ datahistorigaji_ tbl(
    tanggal_mulai_gaji_DATETIME,
    PRIMARY KEY ( tanggal_mulai_gaji )
 );
-datahistorialamat_ tbl(
+datahistorisalamat_ tbl(
    karyawan_id INT NOT NULL AUTO_INCREMENT,
    tanggal_masuk DATETIME,
    alamat_sekarang VARCHAR(100),
