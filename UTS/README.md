@@ -76,7 +76,7 @@ Pengarang 1 1 --- 1-n Komik
 penerbit 1 1 --- 1-n Komik
 
 ## Erd Crow foot
-![Erd crow foot](img/erd crow foot.drawio.png "Erd Crow Foot")
+![Erd crow foot](img/erd crow foot.drawio.png)
 #### Tabel Admin
 |🔑id_admin|nama_admin|username_admin|pass_admin|alamat_admin|no_telepon|
 |---|---|---|---|---|---|
