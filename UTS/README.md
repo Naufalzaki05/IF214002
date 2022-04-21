@@ -90,7 +90,7 @@ Membuat sistem ruang baca komik, sehingga pengelola ruang baca mudah dalam mengu
 - penerbit 1 1 --- 1-n Komik
 
 ## Erd Chen
-![Diagram ERD drawio](https://user-images.githubusercontent.com/100655325/164358897-8c1a7027-793c-4bac-bbb9-29047f16b178.png)
+![Diagram ERD drawio (1)](https://user-images.githubusercontent.com/100655325/164359980-e561526d-1d86-4ad9-bf66-a15c1bf6bf67.png)
 
 ## Erd Crow foot
 (![erd crow foot drawio](https://user-images.githubusercontent.com/100655325/164357167-002a021d-9e36-4b30-b084-39448db82424.png)
