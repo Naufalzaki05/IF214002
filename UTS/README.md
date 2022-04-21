@@ -67,24 +67,24 @@ Membuat sistem ruang baca komik, sehingga pengelola ruang baca mudah dalam mengu
 4. jatuh_tempo
 
 ## pengembalian
-1. id_pengembalian
-2. id_peminjaman
-3. waktu_prngembalian
+1. id_pengembalian(PK)
+2. id_peminjaman(FK)
+3. waktu_pengembalian
 4. status_pengembalian
 5. kondisi
 6. denda
 
 ## RELASI
-Admin 1 1 --- 0-n Peminjaman
-Admin 1 1 --- 1 1 Gudang
-Komik 1-n --- 1 1
-Admin 1 1 --- 0-n Pengembalian
-Peminjaman 0-n --- 1 1 Member
-Peminjaman 0-n --- 0-n Komik
-Pengembalian 0-n --- 1 1 Member
-Genre 1-n --- 1-n Komik
-Pengarang 1 1 --- 1-n Komik
-penerbit 1 1 --- 1-n Komik
+- Admin 1 1 --- 0-n Peminjaman
+- Admin 1 1 --- 1 1 Gudang
+- Komik 1-n --- 1 1
+- Admin 1 1 --- 0-n Pengembalian
+- Peminjaman 0-n --- 1 1 Member
+- Peminjaman 0-n --- 0-n Komik
+- Pengembalian 0-n --- 1 1 Member
+- Genre 1-n --- 1-n Komik
+- Pengarang 1 1 --- 1-n Komik
+- penerbit 1 1 --- 1-n Komik
 
 ## Erd Chen
 ![Diagram ERD drawio](https://user-images.githubusercontent.com/100655325/164358897-8c1a7027-793c-4bac-bbb9-29047f16b178.png)
@@ -150,7 +150,7 @@ penerbit 1 1 --- 1-n Komik
 |3|1|3|3|2022-04-02 08:00:00|2022-05-02 08:00:00|
 
 #### Tabel Pengembalian
-|🔑id_pengembalian|id_peminjaman|waktu_pengembalian|status_pengembalian|kondisi_komik|Denda|
+|🔑id_pengembalian|id_peminjaman|waktu_pengembalian|status_pengembalian|kondisi|Denda|
 |---|---|---|---|---|---|
 |1|1|2022-05-01 13:40:42|Sudah|baik|0|
 |2|2|-|Belum|-|-|
