@@ -282,3 +282,15 @@ TABLESPACE pg_default;
 ```python
 print("PostgreSql")
 ```
+![Screenshot (425)](https://user-images.githubusercontent.com/100655325/164622471-05ad9e96-4032-4707-924a-9ff5f5857b88.png)
+![Screenshot (426)](https://user-images.githubusercontent.com/100655325/164623084-ff3963b5-d32f-428b-9024-7dc2ba5c49d3.png)
+![Screenshot (588)](https://user-images.githubusercontent.com/100655325/164623211-164ad361-c1ae-4661-9c80-3cafc688ebdb.png)
+![Screenshot (589)](https://user-images.githubusercontent.com/100655325/164623308-e28dba2f-90aa-4cc0-9b94-d36a52054804.png)
+![Screenshot (590)](https://user-images.githubusercontent.com/100655325/164623412-f46646ac-cd45-41d0-936f-7401355c5a15.png)
+![Screenshot (591)](https://user-images.githubusercontent.com/100655325/164623640-b0edc659-210f-4ae0-9874-b3dcd56f3b85.png)
+![Screenshot (592)](https://user-images.githubusercontent.com/100655325/164623725-2a440bcc-c510-4e12-ad7d-83fea23b2a78.png)
+![Screenshot (593)](https://user-images.githubusercontent.com/100655325/164623925-9d121340-c63a-49c7-a285-e513f769304d.png)
+![Screenshot (594)](https://user-images.githubusercontent.com/100655325/164624024-a9dd6048-6df9-4efd-9b86-d97a94318e3d.png)
+
+
+
