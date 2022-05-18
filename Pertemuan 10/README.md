@@ -282,6 +282,7 @@ SELECT id, nama_lengkap, kode_kabupaten, nomor_hp, gender, tanggal_lahir, ijazah
 GROUP BY id
 HAVING SUM(tanggal_lahir) < 1997 AND kode_kabupaten='3204';
 ```
-![image](https://user-images.githubusercontent.com/100655325/169099187-a9b8b284-2538-4a82-84b0-67dc13d40af0.png)
+![Screenshot (638)](https://user-images.githubusercontent.com/100655325/169099889-f0b31582-b9e9-447c-adb5-89e4efb5cd8e.png)
+
 
 - Nilai tambah, untuk yang menambahkan perintah-perintah MySQL lainnya
