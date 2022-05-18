@@ -277,4 +277,11 @@ NULLIF
 # Tugas
 - Buat infografik / cheatsheet dari perintah-perintah MySQL di atas (boleh yang mau pake PostgreSQL)
 - Buat query untuk mencari penduduk berusia diatas 25 tahun yang berada di kabupaten 3204 dari [data ini](https://github.com/insanalamin/IF214002/blob/main/pertemuan10/penduduk.sql)
+```sql
+SELECT id, nama_lengkap, kode_kabupaten, nomor_hp, gender, tanggal_lahir, ijazah_terakhir, pekerjaan, penghasilan_bulanan, SUM(CURRENT_DATE - tanggal_lahir) AS umur FROM penduduk
+GROUP BY id
+HAVING SUM(tanggal_lahir) < 1997 AND kode_kabupaten='3204';
+```
+![image](https://user-images.githubusercontent.com/100655325/169099187-a9b8b284-2538-4a82-84b0-67dc13d40af0.png)
+
 - Nilai tambah, untuk yang menambahkan perintah-perintah MySQL lainnya
