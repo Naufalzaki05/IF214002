@@ -285,4 +285,14 @@ HAVING SUM(tanggal_lahir) < 1997 AND kode_kabupaten='3204';
 ![Screenshot (638)](https://user-images.githubusercontent.com/100655325/169099889-f0b31582-b9e9-447c-adb5-89e4efb5cd8e.png)
 
 
-- Nilai tambah, untuk yang menambahkan perintah-perintah MySQL lainnya
+# Nilai tambah, untuk yang menambahkan perintah-perintah MySQL lainnya
+### Sorting data penduduk menurut nama
+```sql
+SELECT * from penduduk ORDER BY nama_lengkap ASC
+```
+![Screenshot (639)](https://user-images.githubusercontent.com/100655325/169104040-653c65d4-ede0-485b-93bd-ac0eb645c8d2.png)
+### Sorting Data Menurut kode kabupaten
+```sql
+SELECT * from penduduk ORDER BY  kode_kabupaten asc
+```
+![Screenshot (640)](https://user-images.githubusercontent.com/100655325/169105502-45b26a86-59f5-411d-bfeb-d068004cb362.png)
