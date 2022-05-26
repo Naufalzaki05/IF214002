@@ -300,77 +300,81 @@ INSERT INTO pengembalian (id_pengembalian,id_peminjaman,waktu_pengembalian,denda
 ### data gudang
 ```sql
 SELECT
-	g.id_rak id_rak,
-	a.nama_admin nama_admin,
-    c.judul_komik judul_komik,
+	gudang.id_rak,
+	admin.nama_admin,
+    komik.judul_komik,
     jumlah
 FROM
-	gudang g
-INNER JOIN admin a
-    ON a.id_admin = g.id_rak
-INNER JOIN komik c
+	gudang
+INNER JOIN admin
+    ON gudang.id_admin = admin.id_admin
+INNER JOIN komik
+    on gudang.id_komik = komik.id_komik
 ```
 ![Screenshot (645)](https://user-images.githubusercontent.com/100655325/170273236-65a3c3b0-6fe6-4dcb-8e9d-a7bd33fea820.png)
 
 ### data komik
 ```sql
 SELECT
-	c.id_komik id_komik,
-	c.judul_komik judul_komik,
-    tahun_rilis,
-	g.nama_genre nama_genre,
-	p.nama_pengarang nama_pengarang,
-    q.nama_penerbit nama_penerbit
+	komik.id_komik,
+	judul_komik,
+	genre.nama_genre,
+    pengarang.nama_pengarang,
+    penerbit.nama_penerbit,
+	komik.tahun_rilis,
+    komik.jumlah
 FROM
-	komik c
-INNER JOIN genre g
-    ON g.id_genre = c.id_komik
-INNER JOIN pengarang p 
-    ON p.id_pengarang = c.id_komik
-INNER JOIN penerbit q
-    on q.id_penerbit = c.id_komik
+	komik
+INNER JOIN genre 
+    ON komik.id_genre = genre.id_genre
+INNER JOIN pengarang
+    on komik.id_pengarang = pengarang.id_pengarang
+inner JOIN penerbit
+    on komik.id_penerbit = penerbit.id_penerbit
 ```
 ![Screenshot (644)](https://user-images.githubusercontent.com/100655325/170272549-db45fbe2-b6f7-479e-bcc2-d6574a8e845e.png)
 
 ### data peminjaman
 ```sql
 SELECT
-	p.id_peminjaman id_peminjaman,
-	a.nama_admin nama_admin,
-	c.judul_komik judul_komik,
-	m.nama_member nama_member,
-    waktu_peminjaman,
-    jatuh_tempo
+	peminjaman.id_peminjaman,
+	admin.nama_admin,
+	komik.judul_komik,
+	member.nama_member,
+    peminjaman.waktu_peminjaman,
+    peminjaman.jatuh_tempo
 FROM
-	peminjaman p
-INNER JOIN admin a
-    ON a.id_admin = p.id_peminjaman
-INNER JOIN komik c
-    ON c.id_komik = p.id_peminjaman
-INNER JOIN member m
-    on m.id_member = p.id_peminjaman
+	peminjaman
+INNER JOIN admin
+    ON peminjaman.id_admin = admin.id_admin
+INNER JOIN komik
+    ON peminjaman.id_komik = komik.id_komik
+INNER JOIN member
+    on peminjaman.id_member = member.id_member
 ```
 ![Screenshot (642)](https://user-images.githubusercontent.com/100655325/170272013-e0be0b01-b9c3-4596-a1e8-7f18af9cf2f9.png)
 
 ### data pengembalian
 ```sql
 SELECT
-	p.id_pengembalian id_pengembalian,
-	m.nama_member nama_member,
-    a.nama_admin nama_admin,
-	c.judul_komik judul_komik,
-	waktu_pengembalian,
-    status_pengembalian,
-    kondisi,
-    p.denda denda
+	pengembalian.id_pengembalian,
+	member.nama_member,
+    admin.nama_admin,
+	komik.judul_komik,
+	pengembalian.waktu_pengembalian,
+    pengembalian.status_pengembalian,
+    pengembalian.kondisi,
+    pengembalian.denda
 FROM
-	pengembalian p
-INNER JOIN member m
-    on m.id_member = p.id_pengembalian
-INNER JOIN admin a
-    on a.id_admin = p.id_pengembalian
-INNER JOIN komik c
-    ON c.id_komik = p.id_pengembalian
+    pengembalian
+INNER JOIN member
+    on member.id_member = pengembalian.id_pengembalian
+INNER JOIN admin
+    on admin.id_admin = admin.id_admin
+INNER JOIN komik
+    ON komik.id_komik = komik.id_komik
+ORDER BY id_pengembalian
+
 ```
 ![Screenshot (655)](https://user-images.githubusercontent.com/100655325/170279090-3fca883e-e775-484b-bbb3-9672c02524a4.png)
 
