@@ -331,6 +331,7 @@ INNER JOIN pengarang
     on komik.id_pengarang = pengarang.id_pengarang
 inner JOIN penerbit
     on komik.id_penerbit = penerbit.id_penerbit
+ORDER BY judul_komik
 ```
 ![Screenshot (644)](https://user-images.githubusercontent.com/100655325/170272549-db45fbe2-b6f7-479e-bcc2-d6574a8e845e.png)
 
