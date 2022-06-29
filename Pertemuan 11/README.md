@@ -195,6 +195,10 @@ CREATE INDEX IF NOT EXISTS fki_id_member
     (id_member ASC NULLS LAST)
     TABLESPACE pg_default;
 
+-- Table: public.pengembalian
+
+-- DROP TABLE IF EXISTS public.pengembalian;
+
 CREATE TABLE IF NOT EXISTS public.pengembalian
 (
     id_pengembalian integer NOT NULL,
@@ -203,7 +207,25 @@ CREATE TABLE IF NOT EXISTS public.pengembalian
     denda integer NOT NULL,
     status_pengembalian pengembalian_status NOT NULL,
     kondisi kondisi_status NOT NULL,
+    id_member integer,
+    id_admin integer,
+    id_komik integer,
     CONSTRAINT pengembalian_pkey PRIMARY KEY (id_pengembalian),
+    CONSTRAINT id_admin FOREIGN KEY (id_admin)
+        REFERENCES public.admin (id_admin) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID,
+    CONSTRAINT id_komik FOREIGN KEY (id_komik)
+        REFERENCES public.komik (id_komik) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID,
+    CONSTRAINT id_member FOREIGN KEY (id_member)
+        REFERENCES public.member (id_member) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID,
     CONSTRAINT id_peminjaman FOREIGN KEY (id_peminjaman)
         REFERENCES public.peminjaman (id_peminjaman) MATCH SIMPLE
         ON UPDATE NO ACTION
@@ -222,6 +244,7 @@ CREATE INDEX IF NOT EXISTS fki_id_peminjaman
     ON public.pengembalian USING btree
     (id_peminjaman ASC NULLS LAST)
     TABLESPACE pg_default;
+
 ```
 
 ## DML
@@ -313,12 +336,10 @@ INSERT INTO public.peminjaman (id_peminjaman,id_admin,id_komik,id_member,waktu_p
 ```
 
 ```sql
-INSERT INTO public.pengembalian (id_pengembalian,id_peminjaman,waktu_pengembalian,denda,status_pengembalian,kondisi) VALUES
-	 (1,1,'2022-07-23',0,'sudah','baik'),
-	 (2,2,'2022-07-24',0,'sudah','baik');
+INSERT INTO public.pengembalian(
+	id_pengembalian, id_peminjaman, waktu_pengembalian, denda, status_pengembalian, kondisi, id_member, id_admin, id_komik)
+	VALUES (1, 1, '2022-07-23', 0, 'sudah', 'baik', 1, 1, 1),(2, 2, '2022-07-24', 0, 'sudah', 'baik', 2, 1, 1);
 ```
-![Screenshot (646)](https://user-images.githubusercontent.com/100655325/170273622-dee2459c-b8b1-4548-ab9e-36994f509f6b.png)
-
 ## DQL
 ### data gudang
 ```sql
@@ -381,11 +402,11 @@ SELECT
 FROM
     pengembalian
 INNER JOIN member
-    on member.id_member = pengembalian.id_pengembalian
+    on member.id_member = pengembalian.id_member
 INNER JOIN admin
-    on admin.id_admin = admin.id_admin
+    on admin.id_admin = pengembalian.id_admin
 INNER JOIN komik
-    ON komik.id_komik = komik.id_komik
+    ON komik.id_komik = pengembalian.id_komik
 ORDER BY id_pengembalian
 
 ```
