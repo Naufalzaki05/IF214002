@@ -28,5 +28,6 @@
 
 
 #### Tabel Pengembalian
-![Screenshot (706)](https://user-images.githubusercontent.com/100655325/175807402-be2484ac-3cad-47b4-9b06-29d9d472f846.png)
+![Screenshot (728)](https://user-images.githubusercontent.com/100655325/176493862-5d4a8fe9-2623-4cfe-a86f-a62bc2b61e3c.png)
+
 
