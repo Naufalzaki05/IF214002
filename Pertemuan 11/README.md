@@ -12,31 +12,9 @@ CREATE TABLE IF NOT EXISTS public.admin
 )
 
 TABLESPACE pg_default;
-CREATE TABLE IF NOT EXISTS public.gudang
-(
-    id_rak integer NOT NULL,
-    id_admin integer,
-    id_komik integer,
-    CONSTRAINT gudang_pkey PRIMARY KEY (id_rak),
-    CONSTRAINT id_admin FOREIGN KEY (id_admin)
-        REFERENCES public.admin (id_admin) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION,
-    CONSTRAINT id_komik FOREIGN KEY (id_komik)
-        REFERENCES public.komik (id_komik) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-)
 
-TABLESPACE pg_default;
-
-ALTER TABLE IF EXISTS public.gudang
+ALTER TABLE IF EXISTS public.admin
     OWNER to postgres;
--- Index: fki_id_komik
-
--- DROP INDEX IF EXISTS public.fki_id_komik;
-CREATE INDEX IF NOT EXISTS fki_id_komik
-    ON public.gudang USING btree
 
 CREATE TABLE IF NOT EXISTS public.genre
 (
@@ -47,6 +25,9 @@ CREATE TABLE IF NOT EXISTS public.genre
 
 TABLESPACE pg_default;
 
+ALTER TABLE IF EXISTS public.genre
+    OWNER to postgres;
+
 CREATE TABLE IF NOT EXISTS public.penerbit
 (
     id_penerbit integer NOT NULL,
@@ -55,6 +36,9 @@ CREATE TABLE IF NOT EXISTS public.penerbit
 )
 
 TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.penerbit
+    OWNER to postgres;
 
 CREATE TABLE IF NOT EXISTS public.pengarang
 (
@@ -65,6 +49,9 @@ CREATE TABLE IF NOT EXISTS public.pengarang
 
 TABLESPACE pg_default;
 
+ALTER TABLE IF EXISTS public.pengarang
+    OWNER to postgres;
+
 CREATE TABLE IF NOT EXISTS public.komik
 (
     id_komik integer NOT NULL,
@@ -74,6 +61,7 @@ CREATE TABLE IF NOT EXISTS public.komik
     judul_komik character varying(100) COLLATE pg_catalog."default" NOT NULL,
     tahun_rilis character(4) COLLATE pg_catalog."default" NOT NULL,
     jumlah integer NOT NULL,
+    CONSTRAINT komik_pkey PRIMARY KEY (id_komik),
     CONSTRAINT id_komik UNIQUE (id_komik)
         INCLUDE(judul_komik),
     CONSTRAINT id_genre FOREIGN KEY (id_genre)
@@ -118,7 +106,37 @@ CREATE INDEX IF NOT EXISTS fki_id_pengarang
     ON public.komik USING btree
     (id_pengarang ASC NULLS LAST)
     TABLESPACE pg_default;
-    
+
+CREATE TABLE IF NOT EXISTS public.gudang
+(
+    id integer NOT NULL,
+    id_admin integer,
+    id_komik integer,
+    rak character varying(2) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT gudang_pkey PRIMARY KEY (id),
+    CONSTRAINT id_admin FOREIGN KEY (id_admin)
+        REFERENCES public.admin (id_admin) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT id_komik FOREIGN KEY (id_komik)
+        REFERENCES public.komik (id_komik) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.gudang
+    OWNER to postgres;
+-- Index: fki_id_komik
+
+-- DROP INDEX IF EXISTS public.fki_id_komik;
+
+CREATE INDEX IF NOT EXISTS fki_id_komik
+    ON public.gudang USING btree
+    (id_komik ASC NULLS LAST)
+    TABLESPACE pg_default;
+
 CREATE TABLE IF NOT EXISTS public.member
 (
     id_member integer NOT NULL,
@@ -129,6 +147,9 @@ CREATE TABLE IF NOT EXISTS public.member
 )
 
 TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.member
+    OWNER to postgres;
 
 CREATE TABLE IF NOT EXISTS public.peminjaman
 (
@@ -173,7 +194,7 @@ CREATE INDEX IF NOT EXISTS fki_id_member
     ON public.peminjaman USING btree
     (id_member ASC NULLS LAST)
     TABLESPACE pg_default;
-    
+
 CREATE TABLE IF NOT EXISTS public.pengembalian
 (
     id_pengembalian integer NOT NULL,
@@ -205,113 +226,104 @@ CREATE INDEX IF NOT EXISTS fki_id_peminjaman
 
 ## DML
 ```sql
-INSERT INTO ADMIN (id_admin,nama_admin,username_admin,pass_admin,alamat_admin,no_telepon) VALUES (
-  '1',
-  'pixelle',
-  'pixelle05',
-  '12345',
-  'aka05',
-  '085412341111'
-); 
+INSERT INTO public."admin" (id_admin,nama_admin,username_admin,pass_admin,alamat_admin,no_telepon) VALUES
+	 (1,'Pixelle Zaaki','pixellezaak05','ilymywaifu05','cibiru','087722441001');
 ```
-![Screenshot (654)](https://user-images.githubusercontent.com/100655325/170275946-db9a8921-de63-47de-8ca3-b5e45de104c7.png)
 
 ```sql
-INSERT INTO gudang (id_rak,id_admin,id_komik) VALUES (
-  '1',
-  '1',
-  '1'
-); 
+INSERT INTO public.gudang (id,id_admin,id_komik,rak) VALUES
+	 (1,1,1,'1A'),
+	 (2,1,2,'1A'),
+	 (3,1,3,'1B'),
+	 (4,1,4,'1C'),
+	 (5,1,5,'1C'),
+	 (6,1,6,'1D'),
+	 (7,1,6,'1D'),
+	 (8,1,6,'1E'),
+	 (9,1,6,'1F'),
+	 (10,1,6,'1F'); 
 ```
-![Screenshot (653)](https://user-images.githubusercontent.com/100655325/170275750-e6275556-7d09-4fae-ac39-c5270698ecd2.png)
 
 ```sql
-INSERT INTO genre (id_genre,nama_genre) VALUES (
-  '1',
-  'fantasy'
-); 
+INSERT INTO public.genre (id_genre,nama_genre) VALUES
+	 (1,'Romance             '),
+	 (2,'Drama               '),
+	 (3,'Comedy              '),
+	 (4,'Slice of life       '),
+	 (5,'Music               '),
+	 (6,'Sport               '),
+	 (7,'Sci-fi              '),
+	 (8,'Fantasy             '),
+	 (9,'Harem               '),
+	 (10,'Echi                '),
+	 (11,'Horror              '),
+	 (12,'Thriller            ');
+
 ```
-![Screenshot (652)](https://user-images.githubusercontent.com/100655325/170275394-d64e28c5-c06c-4dd0-a3f5-b3bc9a6ef7c6.png)
 
 ```sql
-INSERT INTO penerbit (id_penerbit,nama_penerbit) VALUES (
-  '1',
-  'KakaoPage'
-); 
+INSERT INTO public.penerbit (id_penerbit,nama_penerbit) VALUES
+	 (1,'Square Enix              '),
+	 (2,'Shueisha                 '),
+	 (3,'Bessatsu Margaret        '),
+	 (4,'Kodansha                 '),
+	 (5,'Naver Corporation        '),
+	 (6,'Hakusensha               ');
 ```
-![Screenshot (651)](https://user-images.githubusercontent.com/100655325/170275126-bcce8f47-0bee-4e82-aa38-62f428a0cb1f.png)
 
 ```sql
-INSERT INTO pengarang (id_pengarang,nama_pengarang) VALUES (
-  '',
-  'Chugong'
-);
+INSERT INTO public.pengarang (id_pengarang,nama_pengarang) VALUES
+	 (1,'Daisuke Hagiwara    '),
+	 (2,'Naoshi Komi         '),
+	 (3,'Io Sakisaka         '),
+	 (4,'Takeshi Obata       '),
+	 (5,'Negi Haruba         '),
+	 (6,'Sou Yayoi           '),
+	 (7,'Ichigo Takano       '),
+	 (8,'Natsuki Tayaka      '),
+	 (9,'Mizuho Kusanagi     '),
+	 (10,'Miki Yoshikawa      ');
 ```
-![Screenshot (650)](https://user-images.githubusercontent.com/100655325/170274867-939a9a5e-ec76-4662-aeda-c2daa851f8a3.png)
+```sql
+INSERT INTO public.komik (id_komik,id_genre,id_pengarang,id_penerbit,judul_komik,tahun_rilis,jumlah) VALUES
+	 (1,1,1,1,'Horimiya','2011',10),
+	 (2,1,2,2,'Nisekoi','2011',9),
+	 (3,1,3,2,'Ao Haru Ride','2011',10),
+	 (4,1,4,2,'Bakuman','2008',8),
+	 (5,1,5,4,'Gotoubun no Hanayome','2017',15),
+	 (6,1,6,5,'ReLife','2013',13),
+	 (7,1,7,2,'Orange','2012',12),
+	 (8,1,8,6,'Fruits Basket','1998',10),
+	 (9,1,9,6,'Akatsuki no Yona','2009',9),
+	 (10,1,10,4,'Yamada-kun to 7-nin no Majo','2012',7);
+```
+
 
 ```sql
-INSERT INTO komik (id_komik,id_genre,id_pengarang,id_penerbit,judul_komik,tahun_rilis,jumlah) VALUES (
-  '1',
-  '1',
-  '1',
-  '1',
-  'Solo Levelling',
-  '2016',
-  '10'
-); 
+INSERT INTO public."member" (id_member,nama_member,alamat_member,no_telepon_member) VALUES
+	 (1,'Zaki','Cipadung','085623451100'),
+	 (2,'Naufal','Cibiru','08900887766 '),
+	 (3,'Anastasia','Manisi','085577663421');
 ```
-![Screenshot (649)](https://user-images.githubusercontent.com/100655325/170274668-75759426-56f0-4189-be4c-e2bc143802a7.png)
 
 ```sql
-INSERT INTO MEMBER (id_member,nama_member,alamat_member,no_telepon_member) VALUES (
-  '1',
-  'zaki',
-  'cibiru',
-  '085218907635'
-); 
+INSERT INTO public.peminjaman (id_peminjaman,id_admin,id_komik,id_member,waktu_peminjaman,jatuh_tempo) VALUES
+	 (1,1,1,1,'2022-06-23','2022-07-23'),
+	 (2,1,1,2,'2022-06-24','2022-07-24'); 
 ```
-![Screenshot (648)](https://user-images.githubusercontent.com/100655325/170274395-11378059-3827-4515-9e74-d6b509170124.png)
 
 ```sql
-INSERT INTO peminjaman (id_peminjaman,id_admin,id_komik,id_member,waktu_peminjaman,jatuh_tempo) VALUES (
-  '1',
-  '1',
-  '1',
-  '1',
-  '2022-05-25',
-  '2022-06-25'
-); 
-```
-![Screenshot (647)](https://user-images.githubusercontent.com/100655325/170273940-505391cd-5208-48f8-bf93-80073f8cafef.png)
-
-```sql
-INSERT INTO pengembalian (id_pengembalian,id_peminjaman,waktu_pengembalian,denda,status_pengembalian,kondisi) VALUES (
-  '1',
-  '1',
-  '2022-06-25',
-  '0',
-  'sudah',
-  'baik'
-);
+INSERT INTO public.pengembalian (id_pengembalian,id_peminjaman,waktu_pengembalian,denda,status_pengembalian,kondisi) VALUES
+	 (1,1,'2022-07-23',0,'sudah','baik'),
+	 (2,2,'2022-07-24',0,'sudah','baik');
 ```
 ![Screenshot (646)](https://user-images.githubusercontent.com/100655325/170273622-dee2459c-b8b1-4548-ab9e-36994f509f6b.png)
 
 ## DQL
 ### data gudang
 ```sql
-SELECT
-	gudang.id_rak,
-	admin.nama_admin,
-    komik.judul_komik,
-    jumlah
-FROM
-	gudang
-INNER JOIN admin
-    ON gudang.id_admin = admin.id_admin
-INNER JOIN komik
-    on gudang.id_komik = komik.id_komik
+select g.rak,count(*) as jumlah_Komik from komik k  inner join gudang g on g.id_komik = k.id_komik group by g.rak order by g.rak;
 ```
-![Screenshot (645)](https://user-images.githubusercontent.com/100655325/170273236-65a3c3b0-6fe6-4dcb-8e9d-a7bd33fea820.png)
 
 ### data komik
 ```sql
@@ -333,7 +345,9 @@ inner JOIN penerbit
     on komik.id_penerbit = penerbit.id_penerbit
 ORDER BY judul_komik
 ```
-![Screenshot (644)](https://user-images.githubusercontent.com/100655325/170272549-db45fbe2-b6f7-479e-bcc2-d6574a8e845e.png)
+```sql
+SELECT p.nama_penerbit,count(*) as jumlah_Komik FROM komik k  inner join penerbit p on p.id_penerbit = k.id_penerbit group by k.id_penerbit, p.nama_penerbit;
+```
 
 ### data peminjaman
 ```sql
@@ -353,8 +367,6 @@ INNER JOIN komik
 INNER JOIN member
     on peminjaman.id_member = member.id_member
 ```
-![Screenshot (642)](https://user-images.githubusercontent.com/100655325/170272013-e0be0b01-b9c3-4596-a1e8-7f18af9cf2f9.png)
-
 ### data pengembalian
 ```sql
 SELECT
@@ -377,7 +389,6 @@ INNER JOIN komik
 ORDER BY id_pengembalian
 
 ```
-![Screenshot (655)](https://user-images.githubusercontent.com/100655325/170279090-3fca883e-e775-484b-bbb3-9672c02524a4.png)
 
 ### Create data type
 ```sql
