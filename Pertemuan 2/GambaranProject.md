@@ -1,37 +1,68 @@
+ENTITAS & ATRIBUT
 ## Deskripsi-Project
-Saya akan membuat peminjaman komik untuk memudahkan para pecinta komik untuk membacanya dan membiasakan agar tidak membaca secara ilegal. 
+Membuat sistem ruang baca komik, sehingga pengelola ruang baca mudah dalam mengurus administrasi.
+## Fitur-fitur
+1. Admin dapat mengelola komik.
+2. Admin dapat mengelola peminjaman serta pengembalian komik member.
 
 # Entitas dan Atribut
+
 ## Admin
-1. id_admin
+1. id_admin(PK)
 2. nama_admin
 3. username_admin
 4. pass_admin
 5. alamat_admin
 6. no_telp_admin
 
+## Gudang
+1. id_rak(PK)
+2. rak
+3. id_admin(FK)
+4. id_komik(FK)
+
 ## komik
-1. id_komik
+1. id_komik(PK)
 2. judul_komik
-3. genre_komik
-4. pengarang_komik
-5. penerbit_komik
-6. tahun_rilis
+3. tahun_rilis
+4. id_genre(FK)
+5. id_pengarang(FK)
+6. id_penerbit(FK)
+7. jumlah
+
+## Genre
+1. id_genre(PK)
+2. nama_genre
+
+## Pengarang
+1. id_pengarang(PK)
+2. nama_pengarang
+
+
+## Penerbit
+1. id_penerbit(PK)
+2. nama_penerbit
 
 ## member
-1. id_member
+1. id_member(PK)
 2. nama_member
 3. alamat_member
 4. no_telp_member
 
 ## peminjaman
-1. id_peminjaman
-2. id_member
-3. tanggal_peminjaman
-4. tanggal_pengembalian
+1. id_peminjaman(PK)
+2. id_member(FK)
+3. id_komik(FK)
+4. waktu_peminjaman
+5. jatuh_tempo
 
 ## pengembalian
-1. id_pengembalian
-2. id_member
-3. status_pengembalian
-4. denda
+1. id_pengembalian(PK)
+2. id_peminjaman(FK)
+3. waktu_pengembalian
+4. status_pengembalian
+5. kondisi
+6. denda
+7. id_admin(FK)
+8. id_komik(FK)
+9. id_member(FK)
