@@ -61,4 +61,7 @@ Membuat sistem ruang baca komik, sehingga pengelola ruang baca mudah dalam mengu
 4. status_pengembalian
 5. kondisi
 6. denda
+7. id_member(FK)
+8. id_admin(FK)
+9. id_komik(FK)
 
