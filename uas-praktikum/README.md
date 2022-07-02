@@ -65,14 +65,17 @@ Membuat sistem ruang baca komik, sehingga pengelola ruang baca mudah dalam mengu
 8. id_admin(FK)
 9. id_komik(FK)
 
-# ERD
+## ERD
 ![Untitled](https://user-images.githubusercontent.com/100655325/176494114-e5896729-4569-46d2-ada2-c8205f00bf35.png)
 
-# DDL DML DQL
+## DDL DML DQL
 [DDL DML DQL](https://github.com/Naufalzaki05/IF214002/tree/main/Pertemuan%2011)
 
-# Aplikasi
+## Tabel-tabel
+[tabel](https://github.com/Naufalzaki05/IF214002/blob/main/Pertemuan%206/README.md)
+
+## Aplikasi
 [Aplikasi](https://github.com/Naufalzaki05/komiku-app/tree/main)
 
-# Video Presentasi
+## Video Presentasi
 [youtube](https://youtu.be/-siuXVbLROk)
